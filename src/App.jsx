@@ -1,6 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage";
+
 import Header from "./components/Header";
+import HomePage from "./pages/HomePage";
+import DetailsPage from "./pages/DetailsPage";
+import SearchPage from "./pages/SearchPage";
+import ExplorePage from "./pages/ExplorePage";
+import PageNotFound from "./pages/PageNotFound";
 
 
 
@@ -12,6 +17,10 @@ function App() {
     <Header />
     <Routes>
       <Route path='/' element={<HomePage />} />
+      <Route path='/:mediaType/:id' element={<DetailsPage/>} />
+      <Route path='/search/:query' element={<SearchPage/>} />
+      <Route path='/explore/:mediaType' element={<ExplorePage />} />
+      <Route path='*' element={<PageNotFound/>} />
     </Routes>
     
 

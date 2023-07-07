@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const HomePage = () => {
+ 
   return (
-    <div>HomePage</div>
+    <div className='[#1b2330]bg- h-screen'>HomePage</div>
   )
 }
 

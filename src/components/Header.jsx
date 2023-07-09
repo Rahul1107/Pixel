@@ -12,6 +12,9 @@ import { useLocation, useNavigate } from 'react-router-dom'
 const Header = () => {
   const [mobileMenu,setMobileMenu] = useState(false)
   const [searchBar,setSearchBar] = useState(false)
+  const [query, setQuery] = useState("")
+  const [backgrondColor,setBackgroundColor] = useState(" bg-[#1b2330]/30 ")
+ 
 
   const navigate = useNavigate()
   const location = useLocation()
@@ -39,10 +42,31 @@ const Header = () => {
 
     setMobileMenu(false)
   }
+
+  const searchQueryHandler = (e)=>{
+    if(((e.key === "Enter") && query.length > 0)){
+        navigate(`/search/${query}`)
+        setSearchBar(false)
+    }
+}
+
+  const controlNavbar = ()=>{
+    if(window.scrollY>200){
+      setBackgroundColor(' bg-[#1b2330] ')
+    }else{
+      setBackgroundColor(' bg-[#1b2330]/30 ')
+    }
+  }
+  useEffect(()=>{
+    window.addEventListener("scroll", controlNavbar)
+    return () => {
+      window.removeEventListener("scroll", controlNavbar)
+    }
+  }, [])
   
 
   return (
-      <header className={`w-full flex flex-col items-center fixed z-10 h-[60px] backdrop-blur-[3.5px] shadow-xl  ${(mobileMenu || searchBar)&&'bg-[#1b2330]'}`  }>
+      <header className={`w-full flex flex-col items-center fixed z-10 h-[60px] ${backgrondColor} transform duration-500 backdrop-blur-[1.5px] shadow-xl  ${(mobileMenu || searchBar)&&'bg-[#1b2330]'}`  }>
 
         <ContentWrapper>
 
@@ -57,20 +81,20 @@ const Header = () => {
 
               <ul className='flex h-[60px] items-center'>
 
-                <li className='text-lg mr-[15px] font-semibold text-white hidden md:block hover:text-pink-500 transform duration-200 cursor-pointer'
+                <li className='text-lg mr-[30px] font-semibold text-white hidden md:block hover:text-pink-500 transform duration-200 cursor-pointer'
                 onClick={()=>{
                   handleNavigation('movie')
                 }}>Movies</li>
 
-                <li className='text-lg mr-[15px] font-semibold text-white hidden md:block hover:text-pink-500 transform duration-200 cursor-pointer'
+                <li className='text-lg mr-[30px] font-semibold text-white hidden md:block hover:text-pink-500 transform duration-200 cursor-pointer'
                 onClick={()=>{
                   handleNavigation('tv')
                 }}>TV Shows</li>
 
-                <li className='text-white text-lg mr-[15px] md:mr-0 hover:text-pink-500 transform duration-200 cursor-pointer' 
+                <li className='text-white text-lg mr-[30px] md:mr-0 hover:text-pink-500 transform duration-200 cursor-pointer' 
                   onClick={openSearchBar}><FaSearch /></li>
 
-                <li className='text-white text-lg mr-[15px] md:mr-0 md:hidden hover:text-pink-500 transform duration-200 cursor-pointer'>
+                <li className='text-white text-lg mr-[30px] md:mr-0 md:hidden hover:text-pink-500 transform duration-200 cursor-pointer'>
                   {mobileMenu ?<RiCloseFill 
                     onClick={()=>{
                       setMobileMenu(false);
@@ -115,7 +139,10 @@ const Header = () => {
 
             <div className='flex items-center'>
 
-              <input className=' px-4 py-1 w-full text-2xl text-[#1b2330] font-semibold bg-slate-100 outline-none placeholder:text-xl placeholder:font-semibold ' placeholder='Search for a movie or tv show...'/>
+              <input className=' px-4 py-1 w-full text-2xl text-[#1b2330] font-semibold bg-slate-100 outline-none placeholder:text-xl placeholder:font-semibold ' placeholder='Search for a movie or tv show...'
+                onChange={(e)=>setQuery(e.target.value)}
+                onKeyUp={searchQueryHandler}
+              />
 
               <RiCloseFill className='text-2xl font-semibold text-[#1b2330]'
                onClick={()=>{setSearchBar(false);}}/>

@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages/Homepage/HomePage";
 import DetailsPage from "./pages/DetailsPage";
 import SearchPage from "./pages/SearchPage";
 import ExplorePage from "./pages/ExplorePage";

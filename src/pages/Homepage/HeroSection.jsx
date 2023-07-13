@@ -31,7 +31,7 @@ const HeroSection = () => {
         <Img src={background}  className=' h-[450px] md:h-[750px]  w-screen  object-cover object-center'/>
         </div> }
 
-        <div className='w-full h-[250px] absolute bottom-0 bg-gradient-to-b from-transparent to-[#1b2330]'></div>
+        <div className='w-full h-[250px] absolute bottom-[-2px] bg-gradient-to-b from-transparent to-[#1b2330]'></div>
 
         <ContentWrapper>
             

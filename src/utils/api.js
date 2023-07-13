@@ -7,6 +7,7 @@ const TMDB_TOKEN = import.meta.env.VITE_APP_TMDB_TOKEN;
 const headers = {
     Authorization: "bearer " + TMDB_TOKEN,
 }
+//  https://api.themoviedb.org/3/genre/movie/list
 
 export const imgUrl = "https://image.tmdb.org/t/p/original"
 

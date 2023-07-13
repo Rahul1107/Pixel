@@ -66,7 +66,7 @@ const Header = () => {
   
 
   return (
-      <header className={`w-full flex flex-col items-center fixed z-10 h-[60px] ${backgrondColor} transform duration-500 backdrop-blur-[1.5px] shadow-xl  ${(mobileMenu || searchBar)&&'bg-[#1b2330]'}`  }>
+      <header className={`w-full flex flex-col items-center fixed z-40 h-[60px] ${backgrondColor} transform duration-500 backdrop-blur-[1.5px] shadow-xl  ${(mobileMenu || searchBar)&&'bg-[#1b2330]'}`  }>
 
         <ContentWrapper>
 

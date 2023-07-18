@@ -6,7 +6,7 @@ import Img from './LazyLoadImg'
 import Rating from './Rating'
 import Genre from './Genre'
 
-const MovieCard = ({data, loading}) => {
+const MovieCard = ({data, loading, fromSearch}) => {
 
     const navigate = useNavigate();
    
@@ -18,8 +18,9 @@ const MovieCard = ({data, loading}) => {
 
         <div className=' hover:scale-105 transform duration-300 relative aspect-[1/1.5]  flex justify-between '>
             <Img src={posterUrl} className='rounded-2xl'/>
-            <Rating data={data?.vote_average}/>
-            <Genre genre={(data?.genre_ids).slice(0,2)} media_type={data?.media_type}/>
+            {!fromSearch &&(<Rating data={data?.vote_average}/>)}
+            
+            {!fromSearch &&(<Genre genre={(data?.genre_ids).slice(0,2)} media_type={data?.media_type}/>)}
            
            
 

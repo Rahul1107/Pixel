@@ -31,7 +31,7 @@ const Carousel = ({data,loading}) => {
             onClick={()=>navigation('left')}
          />
         <BiRightArrowCircle 
-            className='absolute top-[35%]  right-0 text-4xl cursor-pointer text-white/70 hover:text-white z-20 '
+            className='absolute top-[35%]  right-0 text-4xl cursor-pointer text-white/70 hover:text-white z-20 hidden md:block'
             onClick={()=>navigation('right')}
             />
 

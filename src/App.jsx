@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
 import HomePage from "./pages/Homepage/HomePage";
-import DetailsPage from "./pages/DetailsPage";
+import DetailsPage from "./pages/DetailsPage/DetailsPage";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import ExplorePage from "./pages/ExplorePage/ExplorePage";
 import PageNotFound from "./pages/PageNotFound";

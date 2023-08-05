@@ -13,7 +13,7 @@ const Header = () => {
   const [mobileMenu,setMobileMenu] = useState(false)
   const [searchBar,setSearchBar] = useState(false)
   const [query, setQuery] = useState("")
-  const [backgrondColor,setBackgroundColor] = useState(" bg-[#1b2330]/30 ")
+  const [backgrondColor,setBackgroundColor] = useState(" bg-transparent ")
  
 
   const navigate = useNavigate()
@@ -51,10 +51,10 @@ const Header = () => {
 }
 
   const controlNavbar = ()=>{
-    if(window.scrollY>200){
+    if(window.scrollY>100){
       setBackgroundColor(' bg-[#1b2330] ')
     }else{
-      setBackgroundColor(' bg-[#1b2330]/30 ')
+      setBackgroundColor(' bg-transparent ')
     }
   }
   useEffect(()=>{
@@ -66,11 +66,11 @@ const Header = () => {
   
 
   return (
-      <header className={`w-full flex flex-col items-center fixed z-40 h-[60px] ${backgrondColor} transform duration-500 backdrop-blur-[1.5px] shadow-xl  ${(mobileMenu || searchBar)&&'bg-[#1b2330]'}`  }>
+      <header className={`w-full flex flex-col items-center fixed z-40 h-[60px] ${backgrondColor} transform duration-100  ${(mobileMenu || searchBar)&&'bg-[#1b2330]'}`  }>
 
         <ContentWrapper>
 
-          <div className='flex justify-between items-center '>
+          <div className='flex justify-between items-center  '>
 
             <div className='cursor-pointer' 
             onClick={()=>{navigate('/')}}>
@@ -111,7 +111,7 @@ const Header = () => {
           
         </ContentWrapper>
     
-        <div className={` bg-[#1b2330]  w-full translate-y-[-140px] ${mobileMenu&&'translate-y-[0px]'} transform duration-300 shadow-xl md:hidden`}> 
+        <div className={`  bg-transparent backdrop-blur-[1.5px] w-full translate-y-[-140px] ${mobileMenu&&'translate-y-[0px]'} transform duration-300 shadow-xl md:hidden`}> 
 
           <ContentWrapper>
 
@@ -133,18 +133,18 @@ const Header = () => {
 
         </div>
       
-        <div  className={`w-full  transform duration-300 shadow-xl h-[60px] bg-slate-100  translate-y-[-200px] md:translate-y-[-120px] ${searchBar&&'translate-y-[-70px] md:translate-y-[0px]'} -z-40  `}>
+        <div  className={`w-full  transform duration-300 shadow-xl h-[60px] bg-transparent backdrop-blur-[1.5px]  translate-y-[-200px] md:translate-y-[-120px] ${searchBar&&'translate-y-[-70px] md:translate-y-[0px]'} -z-40  `}>
         
           <ContentWrapper>
 
             <div className='flex items-center'>
 
-              <input className=' px-4 py-1 w-full text-2xl text-[#1b2330] font-semibold bg-slate-100 outline-none placeholder:text-xl placeholder:font-semibold ' placeholder='Search for a movie or tv show...'
+              <input className=' px-4 py-1 w-full text-2xl text-white font-semibold bg-transparent backdrop-blur-[1.5px] outline-none placeholder:text-xl placeholder:font-semibold ' placeholder='Search for a movie or tv show...'
                 onChange={(e)=>setQuery(e.target.value)}
                 onKeyUp={searchQueryHandler}
               />
 
-              <RiCloseFill className='text-2xl font-semibold text-[#1b2330]'
+              <RiCloseFill className='text-2xl font-semibold text-white'
                onClick={()=>{setSearchBar(false);}}/>
 
             </div>

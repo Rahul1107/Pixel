@@ -28,7 +28,7 @@ const TopRated = () => {
             
         </ContentWrapper>
        
-        <Carousel data={data?.results} loading={loading} />
+        <Carousel data={data?.results} loading={loading} mediaType={endpoint} />
     </div>
   )
 }

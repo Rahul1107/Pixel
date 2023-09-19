@@ -14,7 +14,7 @@ const Popular = () => {
         setEndpoint(tab === "Movies"?"movie":"tv")
     }
 
-    console.log(data)
+  
   return (
 
     <div className='mt-16'>
@@ -28,7 +28,7 @@ const Popular = () => {
             
         </ContentWrapper>
        
-        <Carousel data={data?.results} loading={loading} />
+        <Carousel data={data?.results} loading={loading} mediaType={endpoint} />
     </div>
   )
 }

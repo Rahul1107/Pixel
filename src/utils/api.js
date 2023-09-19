@@ -10,6 +10,7 @@ const headers = {
 //  https://api.themoviedb.org/3/genre/movie/list
 
 export const imgUrl = "https://image.tmdb.org/t/p/original"
+export const profileUrl="https://image.tmdb.org/t/p/w185"
 
 export const fetchDataFromApi = async (url, params) => {
     try {

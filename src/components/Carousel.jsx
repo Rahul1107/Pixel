@@ -6,7 +6,7 @@ import {BiLeftArrowCircle} from 'react-icons/bi'
 import Shimmer from './Shimmer'
 
 
-const Carousel = ({data,loading}) => {
+const Carousel = ({data,loading,mediaType}) => {
 
     const carouselContainer = useRef()
 
@@ -39,7 +39,7 @@ const Carousel = ({data,loading}) => {
         {!loading ? (data ?(data.map((d)=>{
                 return(
               
-                <MovieCard data={d} key={d.id} />
+                <MovieCard data={d} key={d.id} mediaType={mediaType}/>
             
                 )
             })): null)

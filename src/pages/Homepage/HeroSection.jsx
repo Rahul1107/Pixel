@@ -2,7 +2,7 @@ import React,{useEffect, useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import useFetch from '../../hooks/useFetch'
-import { imgUrl } from '../../utils/api'
+                        import { imgUrl } from '../../utils/api'
 import Img from '../../components/LazyLoadImg'
 import ContentWrapper from '../../components/ContentWrapper'
 

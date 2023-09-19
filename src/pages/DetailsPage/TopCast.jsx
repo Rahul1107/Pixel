@@ -19,8 +19,8 @@ const TopCast = ({data, loading}) => {
             let url
                 item?.profile_path != null?(url = profileUrl+ item?.profile_path):(url = avatar)
                 return(
-                    <div>
-                        <CastCard url={url} name={item?.name} character={item?.character}/>
+                    <div key={item?.name}>
+                        <CastCard url={url} name={item?.name} character={item?.character} />
                         
                     </div>
                 

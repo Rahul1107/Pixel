@@ -20,7 +20,7 @@ const SearchPage = () => {
         setData(res)
         setPageNum(2)
         setLoading(false)
-        console.log(res)
+       
       })
     
   }

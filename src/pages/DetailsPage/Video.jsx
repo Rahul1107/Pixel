@@ -7,8 +7,7 @@ import { AiOutlinePlayCircle } from "react-icons/ai";
 const Video = ({data, loading}) => {
     const [show, setShow] = useState(false);
     const [videoId, setVideoId] = useState(null);
-    console.log(data?.results)
-    console.log(videoId)
+   
   return (
         <>
         <div className=''>

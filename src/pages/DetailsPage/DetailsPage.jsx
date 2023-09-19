@@ -10,8 +10,7 @@ import Recommendations from './Recommendations'
 
 const DetailsPage = () => {
   const{id, mediaType} = useParams()
-  console.log(mediaType)
-  console.log(id)
+ 
   const {data, loading} = useFetch(`/${mediaType}/${id}/credits`)
   const {data: videoData, loading: videoDataLoading} =useFetch(`/${mediaType}/${id}/videos`)
 

@@ -21,7 +21,7 @@ const DetailsBanner = ({ mediaType, id}) => {
     const {data, loading} = useFetch(`/${mediaType}/${id}`)
     const posterUrl = (data?.poster_path? imgUrl+data?.poster_path : null)
     
-    console.log(data)
+
 
     useEffect(()=>{
         const bg = imgUrl+data?.backdrop_path

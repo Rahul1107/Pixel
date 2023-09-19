@@ -6,7 +6,7 @@ import avatar from "../../assets/avatar.png"
 import CastCard from '../../components/CastCard';
 
 const TopCast = ({data, loading}) => {
-    console.log(data)
+   
     
 
   return (

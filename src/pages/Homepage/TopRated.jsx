@@ -14,7 +14,7 @@ const TopRated = () => {
         setEndpoint(tab === "Movies"?"movie":"tv")
     }
 
-    console.log(data)
+  
   return (
 
     <div className='mt-16'>
